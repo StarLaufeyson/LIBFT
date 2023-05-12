@@ -3,16 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eluno-la <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: eluno-la <eluno-la@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/29 17:11:26 by eluno-la          #+#    #+#             */
-/*   Updated: 2023/04/29 17:24:40 by eluno-la         ###   ########.fr       */
+/*   Updated: 2023/05/12 14:32:45 by eluno-la         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	<stdio.h>
-#include	<ctype.h>
-/*#include	<libft.h>*/
+#include	"libft.h"
 
 int	ft_isascii(int c)
 {

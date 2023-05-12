@@ -3,17 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eluno-la <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: eluno-la <eluno-la@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/29 17:25:20 by eluno-la          #+#    #+#             */
-/*   Updated: 2023/05/10 18:21:53 by eluno-la         ###   ########.fr       */
+/*   Updated: 2023/05/12 14:36:14 by eluno-la         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	<ctype.h>
-#include	<stdio.h>
-#include	<unistd.h>
-/*#include	<libft.h>*/
+#include	"libft.h"
 
 int	ft_isprint(int c)
 {

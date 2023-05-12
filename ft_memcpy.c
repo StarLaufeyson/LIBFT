@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eluno-la <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: eluno-la <eluno-la@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 13:57:28 by eluno-la          #+#    #+#             */
-/*   Updated: 2023/05/10 14:23:19 by eluno-la         ###   ########.fr       */
+/*   Updated: 2023/05/12 14:46:37 by eluno-la         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,12 @@
 
 void	*ft_mempcy(void *dest, const void *src, size_t n)
 {
-	char *d = dest;
-	const char *s = src;
-	size_t	i;
+	char		*d;
+	const char	*s;
+	size_t		i;
 
+	s = src;
+	d = dest;
 	i = 0;
 	while (i < n)
 	{

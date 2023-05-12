@@ -1,18 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   isalpha.c                                          :+:      :+:    :+:   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eluno-la <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: eluno-la <eluno-la@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/29 15:40:53 by eluno-la          #+#    #+#             */
-/*   Updated: 2023/04/29 16:22:29 by eluno-la         ###   ########.fr       */
+/*   Updated: 2023/05/12 14:29:12 by eluno-la         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	<unistd.h>
-#include	<ctype.h>
-/*#include	<libft.h>*/
+#include	"libft.h"
 
 int	ft_isalpha(int c)
 {
@@ -22,8 +20,6 @@ int	ft_isalpha(int c)
 		return (0);
 }
 
-#include	<stdio.h>
-
 int	main(void)
 {
 	printf("%d\n", ft_isalpha('a'));
@@ -31,4 +27,3 @@ int	main(void)
 	printf("%d\n", ft_isalpha('?'));
 	return (0);
 }
-
