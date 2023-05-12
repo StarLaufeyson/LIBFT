@@ -3,22 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eluno-la <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: eluno-la <eluno-la@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 16:53:53 by eluno-la          #+#    #+#             */
-/*   Updated: 2023/05/10 17:31:05 by eluno-la         ###   ########.fr       */
+/*   Updated: 2023/05/12 18:39:00 by eluno-la         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	<stdio.h>
-#include	<stddef.h>
-/*#include	<libft.h>*/
+#include	"libft.h"
 
 void	*ft_memmove(void *dest, const void *src, size_t len)
 {
-	char *d = dest;
-	const char *s = src;
+	char		*d;
+	const char	*s;
+	size_t		i;
 
+	d = dest;
+	s = src;
 	if (d > s)
 	{
 		while (len-- > 0)
@@ -26,20 +27,19 @@ void	*ft_memmove(void *dest, const void *src, size_t len)
 			d[len] = s[len];
 		}
 	}
-	else 
+	else
 	{
-		size_t i = 0;
+		i = 0;
 		while (i < len)
 		{
 			d[i] = s[i];
 			i++;
 		}
 	}
-
 	return (dest);
 }
 
-int	main(void)
+/*int	main(void)
 {
 	char	src[] = {"Hola, qué tal!"};
 	char	dest[] = {"Hello, how are you!"};
@@ -52,4 +52,4 @@ int	main(void)
 	printf("La cadena de destino es: %s\n", dest);
 
 	return (0);
-}
+}*/

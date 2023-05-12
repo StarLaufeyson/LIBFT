@@ -6,7 +6,7 @@
 /*   By: eluno-la <eluno-la@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 19:24:59 by eluno-la          #+#    #+#             */
-/*   Updated: 2023/05/12 14:19:17 by eluno-la         ###   ########.fr       */
+/*   Updated: 2023/05/12 18:40:56 by eluno-la         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	ft_bzero(void *s, size_t n)
 	return ;
 }
 
-int	main(void)
+/*int	main(void)
 {
 	char	str[] = "Good morning, Vietnam!";
 	size_t	n = sizeof(str);
@@ -35,4 +35,4 @@ int	main(void)
 	ft_bzero(str, n);
 	printf("After ft_bzero: %s\n", str);
 	return (0);
-}
+}*/

@@ -1,16 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   libft.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eluno-la <eluno-la@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/29 17:42:32 by eluno-la          #+#    #+#             */
-/*   Updated: 2023/05/12 17:49:04 by eluno-la         ###   ########.fr       */
+/*   Created: 2023/05/12 17:13:23 by eluno-la          #+#    #+#             */
+/*   Updated: 2023/05/12 17:13:25 by eluno-la         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include	"libft.h"
+
+size_t	ft_strlen(const char *str)
+{
+	size_t	i;
+
+	i = 0;
+	while (str[i] != '\0')
+	{
+		i++;
+	}
+	return (i);
+}
 
 size_t	ft_strlcpy(char *dest, const char *src, size_t dest_size)
 {
@@ -31,15 +43,15 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t dest_size)
 	return (i);
 }
 
-/*int	main(void)
+size_t	ft_strlcat(char *dest, const char *src, size_t dest_size)
 {
-	char	src[] = "Hello, World!";
-	char	dest[20];
+	size_t	dest_length;
+	size_t	src_length;
 
-	size_t length = ft_strlcpy(dest, src, sizeof(dest));
-
-	printf("Cadena de origen: %s\n", src);
-	printf("Cadena de destino: %s\n", dest);
-	printf("Longitud de la cadena copiada: %zu\n", length);
-	return (0);
-}*/
+	dest_length = ft_strlen(dest);
+	src_length = ft_strlen(src);
+	if (dest_length >= dest_size)
+		return (dest_size + src_length);
+	ft_strlcpy(dest + dest_length, src, dest_size - dest_length);
+	return (dest_length + src_length);
+}

@@ -6,7 +6,7 @@
 /*   By: eluno-la <eluno-la@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/29 17:25:20 by eluno-la          #+#    #+#             */
-/*   Updated: 2023/05/12 14:36:14 by eluno-la         ###   ########.fr       */
+/*   Updated: 2023/05/12 18:30:19 by eluno-la         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,10 @@ int	ft_isprint(int c)
 	return (0);
 }
 
-int	main(void)
+/*int	main(void)
 {
 	printf("%d\n", ft_isprint('A'));
 	printf("%d\n", ft_isprint('~'));
 	printf("%d\n", ft_isprint('$'));
 	return (0);
-}
+}*/

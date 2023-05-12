@@ -6,13 +6,11 @@
 /*   By: eluno-la <eluno-la@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 13:57:28 by eluno-la          #+#    #+#             */
-/*   Updated: 2023/05/12 14:46:37 by eluno-la         ###   ########.fr       */
+/*   Updated: 2023/05/12 18:41:48 by eluno-la         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	<stdio.h>
-#include	<string.h>
-/*#include	<libft.h>*/
+#include	"libft.h"
 
 void	*ft_mempcy(void *dest, const void *src, size_t n)
 {
@@ -28,11 +26,10 @@ void	*ft_mempcy(void *dest, const void *src, size_t n)
 		d[i] = s[i];
 		i++;
 	}
-
-	return dest;
+	return (dest);
 }
 
-int	main(void)
+/*int	main(void)
 {
 	char	src[] = "Hola mundo!";
 	char	dest[15];
@@ -43,4 +40,4 @@ int	main(void)
 	printf("La cadena de destino es: %s\n", dest);
 
 	return (0);	
-}
+}*/
