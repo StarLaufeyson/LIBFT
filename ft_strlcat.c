@@ -6,7 +6,7 @@
 /*   By: eluno-la <eluno-la@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 15:08:24 by eluno-la          #+#    #+#             */
-/*   Updated: 2023/05/12 17:11:53 by eluno-la         ###   ########.fr       */
+/*   Updated: 2023/05/13 15:08:54 by eluno-la         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,42 +24,30 @@ size_t	ft_strlen(const char *str)
 	return (i);
 }
 
-size_t	ft_strlcpy(char *dest, const char *src, size_t dest_size)
+size_t	ft_strlcat(char *dest, const char *src, size_t size)
 {
 	size_t	i;
+	size_t	length;
 
+	length = ft_strlen(dest) + ft_strlen(src);
+	if (size <= ft_strlen(dest))
+		return (ft_strlen(src) + size);
+	while (*dest)
+		dest++;
 	i = 0;
-	while (*src && (i + 1 < dest_size))
+	while ((i < size - (length - ft_strlen(src)) - 1) && src[i])
 	{
-		*dest++ = *src++;
+		dest[i] = src[i];
 		i++;
 	}
-	if (dest_size > 0)
-	{
-		*dest = '\0';
-	}
-	while (*src++)
-	i++;
-	return (i);
-}
-
-size_t	ft_strlcat(char *dest, const char *src, size_t dest_size)
-{
-	size_t	dest_length;
-	size_t	src_length;
-
-	dest_length = ft_strlen(dest);
-	src_length = ft_strlen(src);
-	if (dest_length >= dest_size)
-		return (dest_size + src_length);
-	ft_strlcpy(dest + dest_length, src, dest_size - dest_length);
-	return (dest_length + src_length);
+	dest[i] = '\0';
+	return (length);
 }
 
 int	main(void)
 {
 	char	dest[29] = "Happy Birthday";
-	char	src[] = " Mr president!";
+	const char	*src = " Mr president!";
 	size_t	dest_size = sizeof(dest);
 	size_t	result = ft_strlcat(dest, src, dest_size);
 
