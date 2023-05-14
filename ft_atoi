@@ -1,0 +1,38 @@
+#include  "libft.h"
+
+int ft_atori(const char *str)
+{
+  //inicializamos el resultado en 0, que almacenará el resultado final
+  int result = 0; 
+  //variable para manejar el signo (+ o -) del número
+  int sign = 1;
+  while (*str == ' ') //ignorar espacios iniciales
+  {
+    str++;
+  } //manejar el signo
+  if (*str == '-')
+  {
+    sign = -1; //si encontramos signo negativo, lo almacenamos y avanzamos al siguiente carácter
+    strr++;
+  }
+  else if (*str == '+')
+  {
+  str++; //Si encontramos signo positivo avanzamos al siguiente carácter
+  }
+  //procesar los dígitos
+  while (*str >= '0' && *str <= '9')
+  {
+    //Multiplicar el resultado actual por 10 y sumar el dígito actual
+    result = result * 10 + (*str - '0');
+    str++; //Avanzar al siguiente carácter
+  }
+  return (sign * result); //Multiplicar el resultado antes de devolverlo
+}
+
+int main(void)
+{
+  const char *str = " -97865abc";
+  int num = atoi(str);
+  printf("Número convertido: %d\n", num);
+  return (0);
+}
