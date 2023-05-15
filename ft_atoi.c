@@ -6,7 +6,7 @@
 /*   By: eluno-la <eluno-la@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/13 19:29:02 by eluno-la          #+#    #+#             */
-/*   Updated: 2023/05/15 17:15:26 by eluno-la         ###   ########.fr       */
+/*   Updated: 2023/05/15 17:53:43 by eluno-la         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,10 +40,11 @@ int	ft_atoi(const char *str)
 	return (sign * result);
 }
 
-int main
+/*int	main(void)
 {
-	const char *str = " -97865abc";
-	int	num = atoi(str);
+	const char	*str = " -97865abc";
+	int	num = ft_atoi(str);
+
 	printf("Numero convertido: %d\n", num);
 	return (0);
-}
+}*/
