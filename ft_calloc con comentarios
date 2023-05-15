@@ -3,7 +3,7 @@ void	*ft_memset(void *b, int c, size_t len);
 
 void  *ft_calloc(size_t num_elements, size_t size)
 {
-  size_t  total_size = num * size; //Calcula tamaño total en bytes
+  size_t  total_size = num_elements * size; //Calcula tamaño total en bytes
   void *ptr = malloc(total_size); //Asigna memoria con malloc
   
   if (ptr != NULL)
