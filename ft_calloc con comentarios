@@ -1,0 +1,40 @@
+#include  "libft.h"
+void	*ft_memset(void *b, int c, size_t len);
+
+void  *ft_calloc(size_t num_elements, size_t size)
+{
+  size_t  total_size = num_elements * size; //Calcula tamaño total en bytes
+  void *ptr = malloc(total_size); //Asigna memoria con malloc
+  
+  if (ptr != NULL)
+  {
+    //Inicializa memoria asignada a 0 utilizando función memset
+    ft_memset(ptr, 0, total_size);
+    }
+    return (ptr);
+}
+
+int main(void)
+{
+  int *numbers;
+  size_t  num_elements = 5;
+  size_t  i;
+  
+  i = 0;
+  //Asigna memoria para un arreglo de enteros de tamaños
+  numbers = ft_calloc(num_elements, sizeof(int));
+  if (numbers == NULL)
+  {
+    printf("Error al asignar memoria.\n");
+    return (1);
+  }
+  //Imprime los elementos del arreglo
+  while (i < num_elements) //Si la condición es verdadera se ejecuta el cuerpo del buble
+  {
+    printf("%\d, numbers[i]);
+    i++;
+  }
+  printf("\n");
+  free (numbers); //Libera la memoria asignada
+  return (0);
+}
