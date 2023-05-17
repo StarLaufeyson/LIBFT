@@ -6,7 +6,7 @@
 /*   By: eluno-la <eluno-la@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 17:39:12 by eluno-la          #+#    #+#             */
-/*   Updated: 2023/05/12 18:32:38 by eluno-la         ###   ########.fr       */
+/*   Updated: 2023/05/17 19:49:59 by eluno-la         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 void	*ft_memset(void *b, int c, size_t len)
 {
-	unsigned char	*placeholder;
+	unsigned char	*p;
 
-	placeholder = (unsigned char *)b;
+	p = (unsigned char *)b;
 	while (len > 0)
 	{
-		*placeholder = (unsigned char)c;
+		*p = (unsigned char)c;
 		placeholder++;
 		len--;
 	}

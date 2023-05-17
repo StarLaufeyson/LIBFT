@@ -6,21 +6,21 @@
 /*   By: eluno-la <eluno-la@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 19:24:59 by eluno-la          #+#    #+#             */
-/*   Updated: 2023/05/12 18:40:56 by eluno-la         ###   ########.fr       */
+/*   Updated: 2023/05/17 19:48:55 by eluno-la         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include	"libft.h"
 
-void	ft_bzero(void *s, size_t n)
+void	ft_bzero(void *s, size_t n) //no va a ser un caracter como en memset que pusimos 'X' sino que siempre será '0'
 {
 	size_t	i;
-	char	*str;
+	unsigned char	*str;
 
 	if (n == 0)
 		return ;
 	i = 0;
-	str = (char *)s;
+	str = (unsigned char *)s;
 	while (i < n)
 		str[i++] = 0;
 	return ;
