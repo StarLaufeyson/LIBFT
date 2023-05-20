@@ -3,25 +3,25 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eluno-la <eluno-la@student.42urduliz.co    +#+  +:+       +#+        */
+/*   By: eluno-la <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/10 13:57:28 by eluno-la          #+#    #+#             */
-/*   Updated: 2023/05/12 18:41:48 by eluno-la         ###   ########.fr       */
+/*   Created: 2023/05/18 18:28:35 by eluno-la          #+#    #+#             */
+/*   Updated: 2023/05/19 16:55:39 by eluno-la         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	"libft.h"
+#include	<stdio.h>
 
-void	*ft_mempcy(void *dest, const void *src, size_t n)
+void	*ft_memcpy(void *dest, const void *src, size_t length)
 {
-	char		*d;
+	char	*d;
 	const char	*s;
-	size_t		i;
+	size_t	i;
 
-	s = src;
 	d = dest;
+	s = src;
 	i = 0;
-	while (i < n)
+	while (i < length)
 	{
 		d[i] = s[i];
 		i++;
@@ -29,15 +29,15 @@ void	*ft_mempcy(void *dest, const void *src, size_t n)
 	return (dest);
 }
 
-/*int	main(void)
+int	main(void)
 {
-	char	src[] = "Hola mundo!";
-	char	dest[15];
-	//añadimos 15 para asegurarnos que haya suficiente espacio para copiar la cadena de  origen//
-	memcpy(dest, src, sizeof(src));
+	char	src[] = "Welcome to Hogwarts!";
+	char	dest[22];
+	ft_memcpy(dest, src, sizeof(src));
 
-	printf("La cadena de origen es: %s\n", src);
-	printf("La cadena de destino es: %s\n", dest);
+	printf("La cadena de origen: %s\n", src);
+	printf("La cadena de destino: %s\n", dest);
 
-	return (0);	
-}*/
+	return (0);
+}
+
