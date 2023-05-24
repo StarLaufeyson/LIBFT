@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include	"libft.h"
-
+//extrae una subcadena de una cadena dada
 void	*ft_memcpy(void *dest, const coid *src, size_t length)
 {
 	char	*d;
