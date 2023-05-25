@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-
+//busca la primera aparición de un byte específico en un bloque de memoria
 void	*ft_memchr(const void *s, int c, size_t n)
 {
 	unsigned char	*ptr;
