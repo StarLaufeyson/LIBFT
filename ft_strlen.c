@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include	"libft.h"
-
+//determina la longitud de una cadena de caracteres
 size_t	ft_strlen(const char *str)
 {
 	size_t	i;
@@ -27,6 +27,6 @@ size_t	ft_strlen(const char *str)
 /*int	main(void)
 {
 	char	str[] = "Happy Birthday Mr President";
-	printf("%d\n", ft_strlen(str));
+	printf("%zu\n", ft_strlen(str));
 	return (0);
 }*/
