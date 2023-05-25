@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include	"libft.h"
-
+//se utiliza para establecer un bloque de memoria a cero
 void	ft_bzero(void *s, size_t n) //no va a ser un caracter como en memset que pusimos 'X' sino que siempre será '0'
 {
 	size_t	i;
