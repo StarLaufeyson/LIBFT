@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include	"libft.h"
-
+//asigna memoria dinamicamente para un arreglo de elementos 
 void	*ft_calloc(size_t num_elements, size_t size)
 {
 	size_t total_size;
