@@ -1,4 +1,4 @@
-#include    "libft"
+#include    "libft.h"
 
 /*A cada carácter de la string ’s’, aplica la función ’f’ dando como parámetros 
 el índice de cada carácter dentro de ’s’ y el propio carácter. Genera una nueva 
@@ -27,9 +27,7 @@ int, char))
     return (result);
 }
 
-#include <stdio.h>
-
-char my_func(unsigned int index, char c)
+/*char my_func(unsigned int index, char c)
 {
     // Ejemplo de función que convierte caracteres a mayúsculas
     if (c >= 'a' && c <= 'z')
@@ -38,7 +36,7 @@ char my_func(unsigned int index, char c)
         return c;
 }
 
-/*int main(void)
+int main(void)
 {
     char input[] = "Hello, World!";
     char *result = ft_strmapi(input, &my_func);
