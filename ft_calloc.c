@@ -18,7 +18,8 @@ void	*ft_calloc(size_t num_elements, size_t size)
 	void *ptr;
 	
 	total_size = num_elements * size;
-	ptr = calloc(num_elements, total_size);
+	ptr = malloc(num_elements, total_size);
+	ft_bzero(result, num_elements * size);
 	return (ptr);
 }
 
