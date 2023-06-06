@@ -15,6 +15,28 @@
 //es estática, lo que significa que solo es visible dentro de este archivo. 
 //Toma dos argumentos: s, que es un puntero a una cadena constante
 //y c, que es el carácter delimitador
+size_t	ft_strlcpy(char *dest, const char *src, size_t dest_size)
+{
+	size_t	i;
+
+	i = 0;
+	while (*src && (i + 1 < dest_size))
+	{
+		*dest++ = *src++;
+		i++;
+	}
+	if (dest_size > 0)
+	{
+		*dest = '\0';
+	}
+	while (*src++)
+	i++;
+	return (i);
+}
+
+//es estática, lo que significa que solo es visible dentro de este archivo. 
+//Toma dos argumentos: s, que es un puntero a una cadena constante
+//y c, que es el carácter delimitador
 static int	ft_count_word(char const *s, char c)
 {
     int i; //i se utilizará para recorrer la cadena s
@@ -42,28 +64,32 @@ static int	ft_count_word(char const *s, char c)
 //i, que es el índice de inicio en la cadena s
 static int  ft_size_words(char const *s, char c, int i)
 {
-    int size; //se utilizará para contar el tamaño de la palabra.
-    char    *word;
+    int     size; //se utilizará para contar el tamaño de la palabra.
+    //char    *word;
 
     size = 0;
-    word = NULL;
     while (s[i] != c && s[i])
     {
         size++;
         i++;
     }
 
-    if (size > 0)
+    /*if (size > 0)
     {
         word = (char *)malloc((size + 1) * sizeof(char));
         //asignar memoria para la palabra
         if (word)
         {
-            strncpy(word, s + i - size, size); //copiar la palabra en la memoria aisgnada
+            ft_strlcpy(word, s + i - size, size); //copiar la palabra en la memoria aisgnada
             word[size] = '\0'; //agregar nulo al final
         }   
     }
-    return (word);
+    else
+    {
+        word = (NULL);
+    }*/
+
+    return (size);
 }
 
 void    ft_free_split(char **split)
@@ -71,14 +97,15 @@ void    ft_free_split(char **split)
     int i;
 
     i = 0;
-    if (!split)
-        return;
-    while (split[i])
+    if (split)
     {
-        free(split[i]);
-        i++;
+        while (split[i] != NULL)
+        {
+            free(split[i]);
+            i++;
+        }
+        free(split);
     }
-    free(split);
 }
 
 char **ft_split(char const *s, char c)
@@ -87,6 +114,7 @@ char **ft_split(char const *s, char c)
     char    **result;
     int i;
     int start;
+    int size;
 
     word_count = ft_count_word(s, c); //Obtener nº total subcadenas
     i = 0;
@@ -103,9 +131,15 @@ char **ft_split(char const *s, char c)
         //si ptr 's' apunta a un caract q no sea el 1ro de la cadena
             if (s > s - 1 && *s - 1 != c)
             {
-                result[i] = ft_size_words(s - 1, c, start);
+                size = ft_size_words(s - 1, c, start);
+                result[i] = (char *)malloc((size + 1) * sizeof(char));;
             //utilizar ft_size_words para obtener palabra actual
-                i++;
+                if (result[i])
+                {
+                    ft_strlcpy(result[i], s - size, size);
+                    result[i][size] = '\0';
+                    i++;
+                }
             }
             start = 0;
         }
@@ -113,7 +147,8 @@ char **ft_split(char const *s, char c)
             start = s - 1;
         s++;
     }
-    result[i] = ft_size_words(s - 1, c, start);
+
+    result[i] = NULL;
     //Obtener ultima palabra después del bucle
     ft_free_split(result);
 
@@ -122,12 +157,11 @@ char **ft_split(char const *s, char c)
 
 int main(void)
 {
-    char    a[];
+    char    a[] = "abcdefghilmnopq";
     char    c;
     char    **split;
     int     i;
 
-    a[] = "abcdefghilmnopq";
     c = 'h';
     i = 0;
     //Obtener el arreglo de subcadenas utilizando ft_split
