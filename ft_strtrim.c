@@ -43,14 +43,14 @@ char	*ft_strtrim(char const *s1, char const *set)
 	trim_len = end - start;
   
  //Asignamos memoria para la cadena recortada
-	trim = (char *)malloc((trim_len + 1) * sizeof(char));
+	trim = (char *)malloc(sizeof(char) * (trim_len + 1));
 	if (trim == NULL)
 		return (NULL);
  //Copiamos los caracteres de s1 desde el índice de inicio hasta el índice de fin de la cadena recortada
-	ft_memcpy(trim, s1 + start, trim_len);
+	ft_strlcpy(trim, s1 + start, trim_len + 1);
   
 //Agregamos el carácter nulo al final de la cadena recortada
-	trim[trim_len] = '\0';
+	//trim[trim_len] = '\0';
   
 //Retornamos la cadena recortada
 	return (trim);
