@@ -10,23 +10,29 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	"libft.h"
-//extrae una subcadena de una cadena dada
-void	*ft_memcpy(void *dest, const coid *src, size_t length)
+#include    <unistd.h>
+#include    <stdio.h>
+#include    <stdlib.h>
+
+size_t	ft_strlcpy(char *dest, const char *src, size_t dest_size)
 {
-	char	*d;
-	const char	*s;
 	size_t	i;
 
-	d = dest;
-	s = src;
 	i = 0;
-	while (i < length)
+	while (*src && (i + 1 < dest_size))
 	{
-		d[i] = s[i];
+		*dest++ = *src++;
 		i++;
 	}
+	if (dest_size > 0)
+	{
+		*dest = '\0';
+	}
+	while (*src++)
+	i++;
+	return (i);
 }
+
 
 size_t	ft_strlen(const char *str)
 {
@@ -59,7 +65,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (substr == NULL)
 		return (NULL);
 	//Copiar los caracteres de la cadena a la subcadena
-	ft_memcpy(substr, s + start, sub_len);
+	ft_strlcpy(substr, s + start, sub_len);
 		substr[sub_len] = '\0';
 		return (substr);
 }
