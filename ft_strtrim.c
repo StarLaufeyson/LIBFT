@@ -21,7 +21,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	trim_len;
   
 //Obtenemos la longitud de la cadena s1
-	s1_len = strlen(s1);
+	s1_len = ft_strlen(s1);
 	
  //Inicializamos los índices de inicio y fin de la cadena a recortar
   start = 0;
