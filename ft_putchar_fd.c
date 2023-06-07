@@ -3,6 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
+<<<<<<< HEAD
 /*   By: eluno-la <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 18:46:04 by eluno-la          #+#    #+#             */
@@ -12,6 +13,17 @@
 
 #include  "libft.h"
 
+=======
+/*   By: eluno-la <eluno-la@student.42urduliz.co    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/06/01 18:32:21 by eluno-la          #+#    #+#             */
+/*   Updated: 2023/06/01 18:42:35 by eluno-la         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include	"libft.h"
+
+>>>>>>> 68602ceb188baaabc9699d7a9c1c6a66652d8b4b
 void	ft_putchar_fd(char c, int fd)
 {
 	write(fd, &c, 1);
