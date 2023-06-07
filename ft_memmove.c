@@ -11,8 +11,8 @@
 /* ************************************************************************** */
 
 #include	<stdio.h>
-
-void	*ft_memmove(void *dest, const void *src, size_t length)
+//nueve src a dest, evitando superposiciones de memoria. más seguro que memcpy
+void	*ft_memmove(void *dest, const void *src, size_t len)
 {
 	char	*d;
 	const char	*s;

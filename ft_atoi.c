@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include  "libft.h"
-
+//Convierte cadena de caracteres que representa en número entero en un valor entero
 int	ft_atoi(const char *str)
 {
 	int	result;

@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include	"libft.h"
-
+//se utiliza para establecer un bloque de memoria con un valor específico
 void	*ft_memset(void *b, int c, size_t len)
 {
 	unsigned char	*p;
@@ -20,7 +20,7 @@ void	*ft_memset(void *b, int c, size_t len)
 	while (len > 0)
 	{
 		*p = (unsigned char)c;
-		placeholder++;
+		p++;
 		len--;
 	}
 	return (b);

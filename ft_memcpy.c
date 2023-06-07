@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include	<stdio.h>
-
+//copia 'n' bytes de origen/src a destino/dest
 void	*ft_memcpy(void *dest, const void *src, size_t length)
 {
 	char	*d;

@@ -12,7 +12,7 @@
 
 #include	"libft.h"
 #include	<stdlib.h>
-
+//Duplica una cadena de caracteres asignando memoria para una nueva cadena y copiando el contenido de la cadena original en la nueva memoria asignada
 size_t	ft_strlen(const char *str)
 {
 	size_t	i;
@@ -28,13 +28,13 @@ size_t	ft_strlen(const char *str)
 char	*ft_strdup(const char *s)
 {
 	size_t	length;
+	size_t	i;
 	char	*duplicate;
+	
 	length = ft_strlen(s);
 	duplicate = (char *)malloc((length + 1) * sizeof(char));
 	if (duplicate != NULL)
 	{
-		size_t	i;
-
 		i = 0;
 		while (s[i] != '\0')
 		{
