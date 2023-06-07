@@ -6,7 +6,7 @@
 /*   By: eluno-la <eluno-la@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 17:52:01 by eluno-la          #+#    #+#             */
-/*   Updated: 2023/05/26 17:54:41 by eluno-la         ###   ########.fr       */
+/*   Updated: 2023/06/02 18:58:17 by eluno-la         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,25 +29,18 @@ char	*ft_strtrim(char const *s1, char const *set)
 		start++;
 	while (end > start && ft_strchr(set, s1[end]) != NULL)
 		end--;
-	if (end >= start)
-	{
-		trim_len = end - start +1;
-	}
-	else
-	{
-		trim_len = 0;
-	}
+	trim_len = end - start +1;
 	trim = (char *)malloc((trim_len + 1) * sizeof(char));
 	if (trim == NULL)
 		return (NULL);
 	ft_memcpy(trim, s1 + start, trim_len);
 	trim[trim_len] = '\0';
-		return (trim);
+	return (trim);
 }
 
 /*int	main(void)
-[
-	char	*s1 = " Welcome to Hogwarts! ";
+{
+	char	*s1 = "  Welcome to Hogwarts!  ";
 	char	*set = " ";
 
 	char	*trim = ft_strtrim(s1, set);
@@ -59,4 +52,4 @@ char	*ft_strtrim(char const *s1, char const *set)
 		free(trim);
 	}
 	return (0);
-]*/
+}*/

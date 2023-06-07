@@ -6,14 +6,11 @@
 /*   By: eluno-la <eluno-la@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/24 18:44:36 by eluno-la          #+#    #+#             */
-/*   Updated: 2023/05/25 17:25:59 by eluno-la         ###   ########.fr       */
+/*   Updated: 2023/06/02 18:58:56 by eluno-la         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include	"libft.h"
-//Concatena 2 cadenas s1 y s2 y devuelve una cadena resultante
-void	*ft_memcpy(void *dest, const void *src, size_t length);
-size_t	ft_strlen(const char *str);
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
@@ -28,7 +25,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	len2 = ft_strlen(s2);
 	total_len = len1 + len2;
 	result = (char *)malloc((total_len + 1) * sizeof(char));
-	if (result == NULL) // o if (!result)
+	if (result == NULL)
 		return (NULL);
 	ft_memcpy(result, s1, len1);
 	ft_memcpy(result + len1, s2, len2 + 1);
@@ -36,7 +33,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	return (result);
 }
 
-int	main(void)
+/*int	main(void)
 {
 	const char	*s1;
 	const char	*s2;
@@ -55,4 +52,4 @@ int	main(void)
 		printf("Error al concatenar las cadenas.\n");
 	}
 	return (0);
-}
+}*/

@@ -6,57 +6,38 @@
 /*   By: eluno-la <eluno-la@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/27 13:46:02 by eluno-la          #+#    #+#             */
-/*   Updated: 2023/05/27 17:56:46 by eluno-la         ###   ########.fr       */
+/*   Updated: 2023/06/02 19:23:20 by eluno-la         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include	"libft.h"
 
-static int	length(int num)
+static int	digit_count(int n)
 {
-	int	length;
+	int	count;
 
-	length = 1;
-	while (num >= 0)
+	count = 0;
+	if (n == 0)
+		return (1);
+	else if (n < 0)
+		count++;
+	while (n != 0)
 	{
-		length++;
-		num /= 10;
+		count++;
+		n /= 10;
 	}
-	return (length);
+	return (count);
 }
 
-/*static	int	sign_negative(int n, char *str)
+static char	*convert_int(int n, int negative, int num_digits)
 {
-	if (n < 0)
-	{
-		*str = '-';
-		str++;
-		return (1);
-	}
-	return (0);
-}*/
-
-char	*ft_itoa(int n)
-{
-	int		negative;
-	int		digitcount;
-	int		str_length;
 	char	*str;
 	char	*ptr;
 
-	if (n == -2147483648)
-		return (ft_strdup("-2147483648"));
-	if (n < 0)
-	{
-		negative = 1;
-		n = -n;
-	}
-	digitcount = ft_itoa(n);
-	str_length = digitcount + negative + 1;
-	str = (char *)malloc(str_length * sizeof(char));
+	str = (char *)malloc((num_digits + negative + 1) * sizeof(char));
 	if (str == NULL)
 		return (NULL);
-	ptr = str + str_length - 1;
+	ptr = str + num_digits + negative;
 	*ptr = '\0';
 	while (ptr > str + negative)
 	{
@@ -68,7 +49,24 @@ char	*ft_itoa(int n)
 	return (str);
 }
 
-int	main(void)
+char	*ft_itoa(int n)
+{
+	int	negative;
+	int	num_digits;
+
+	negative = 0;
+	if (n == -2147483648)
+		return (ft_strdup("-2147483648"));
+	if (n < 0)
+	{
+		negative = 1;
+		n = -n;
+	}
+	num_digits = digit_count(n);
+	return (convert_int(n, negative, num_digits));
+}
+
+/*int	main(void)
 {
 	int		number;
 	char	*result;
@@ -78,4 +76,4 @@ int	main(void)
 	printf("%s\n", result);
 	free(result);
 	return (0);
-}
+}*/
