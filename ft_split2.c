@@ -12,21 +12,19 @@
 
 #include	"libft.h"
 
-size_t	ft_strlcpy(char *dest, const char *src, size_t dest_size);
-
 static int	ft_count_word(char const *s, char c)
 {
-	int	i;
-	int	word;
+	unsigned int	i;
+	unsigned int	word;
 
 	i = 0;
 	word = 0;
-	while (s && s[i])
+	while (s[i] != '\0')
 	{
 		if (s[i] != c)
 		{
 			word++;
-			while (s[i] != c && s[i])
+			while (s[i] && s[i] != c)
 				i++;
 		}
 		else
@@ -37,10 +35,10 @@ static int	ft_count_word(char const *s, char c)
 
 static int	ft_size_words(char const *s, char c, int i)
 {
-	int	size;
+	unsigned int	size;
 
 	size = 0;
-	while (s[i] != c && s[i])
+	while (s[i] && s[i] != c)
 	{
 		size++;
 		i++;
@@ -48,106 +46,41 @@ static int	ft_size_words(char const *s, char c, int i)
 	return (size);
 }
 
-/*void	ft_free_split(char **split)
+static void	ft_free(char **str, int str_len)
 {
-	int	i;
-
-	i = 0;
-	if (split)
-	{
-		while (split[i] != NULL)
-		{
-			free(split[i]);
-			i++;
-		}
-		free(split);
-	}
-}*/
+	while (str_len-- > 0)
+		free(str[str_len]);
+	free (str);
+}
 
 char	**ft_split(char const *s, char c)
 {
-	char	**result;
-	int		i;
-	int		start;
+	char			**result;
+	unsigned int	i;
+	int				start;
 
-	result = (char **)malloc((ft_count_word(s, c) + 1) * sizeof(char *));
-	if (!result)
+	if (!s)
 		return (NULL);
 	i = 0;
-	start = 0;
-	while (*s)
-	{
-		handle_entry(&result, s, c, &i);
-		s++;
-	}
-	result[i] = NULL;
-	if (!result[i])
-		ft_free_split(result);
-	return (result);
-}
-
-/*char	**ft_split(char const *s, char c)
-{
-	char	**result;
-	int		i;
-	int		start;
-
-	result = (char **)malloc((ft_count_word(s, c) + 1) * sizeof(char *));
+	start = -1;
+	result = malloc(sizeof(char *) * (ft_count_word(s, c) + 1));
 	if (!result)
 		return (NULL);
-	i = 0;
-	start = 0;
-	while (*s)
+	while (++start < ft_count_word(s, c))
 	{
-		handle_entry(&result, s, c, &i);
-		s++;
-	}
-	result[i] = NULL;
-	ft_free_split(result);
-	return (result);
-}*/
-
-void	handle_entry(char ***result, char const *s, char c, int *i)
-{
-	int	start;
-	int	size;
-
-	size = ft_size_words(s - 1, c, start);
-	start = 0;
-	if (*s == c)
-	{
-		if (s > s - 1 && *s - 1 != c)
-		{
-			(*result)[*i] = (char *)malloc((size + 1) * sizeof(char));
-			if ((*result)[*i])
-			{
-				ft_strlcpy((*result)[*i], s - size, size);
-				(*result)[*i][size] = '\0';
-				(*i)++;
-			}
-		}
-		start = 0;
-	}
-	else if (start++ == 0)
-		start = *i - 1;
-}
-
-/*void	ft_free_split(char **split)
-{
-	int	i;
-
-	i = 0;
-	if (split)
-	{
-		while (split[i] != NULL)
-		{
-			free(split[i]);
+		while (s[i] == c)
 			i++;
+		result[start] = ft_substr(s, i, ft_size_words(s, c, i));
+		if (!(result[start]))
+		{
+			ft_free(result, start);
+			return (0);
 		}
-		free(split);
+		i += ft_size_words(s, c, i) + 1;
 	}
-}*/
-
+	result[start] = 0;
+	return (result);
+}
 /*int main(void)
 {
     char    a[] = "abcdefghilmnopq";
