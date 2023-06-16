@@ -6,7 +6,7 @@
 /*   By: eluno-la <eluno-la@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 19:29:30 by eluno-la          #+#    #+#             */
-/*   Updated: 2023/06/01 19:35:04 by eluno-la         ###   ########.fr       */
+/*   Updated: 2023/06/02 18:01:09 by eluno-la         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,10 @@ void	ft_putendl_fd(char *s, int fd)
 	if (s && fd >= 0)
 	{
 		while (*s)
-			write(fd, s, ft_strlen(s));
+		{
+			write(fd, s, 1);
+			s++;
+		}
 		write(fd, "\n", 1);
 	}
 }
