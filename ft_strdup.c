@@ -11,19 +11,6 @@
 /* ************************************************************************** */
 
 #include	"libft.h"
-#include	<stdlib.h>
-//Duplica una cadena de caracteres asignando memoria para una nueva cadena y copiando el contenido de la cadena original en la nueva memoria asignada
-size_t	ft_strlen(const char *str)
-{
-	size_t	i;
-
-	i = 0;
-	while (str[i] != '\0')
-	{
-		i++;
-	}
-	return (i);
-}
 
 char	*ft_strdup(const char *s)
 {
@@ -46,7 +33,7 @@ char	*ft_strdup(const char *s)
 	return (duplicate);
 }
 
-int	main(void)
+/*int	main(void)
 {
 	const char	*original = "Wingardium Leviosa";
 	char		*duplicate;
@@ -64,3 +51,4 @@ int	main(void)
 	}
 	return (0);
 }
+*/
