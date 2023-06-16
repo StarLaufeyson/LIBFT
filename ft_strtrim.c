@@ -6,20 +6,12 @@
 /*   By: eluno-la <eluno-la@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 17:52:01 by eluno-la          #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2023/06/02 18:58:17 by eluno-la         ###   ########.fr       */
-=======
-/*   Updated: 2023/05/26 18:25:01 by eluno-la         ###   ########.fr       */
->>>>>>> 68602ceb188baaabc9699d7a9c1c6a66652d8b4b
+/*   Updated: 2023/06/16 20:29:18 by eluno-la         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"libft.h"
-<<<<<<< HEAD
 
-=======
-//elimina todos los caracteres de string 'set' desde el principio y desde el final de 's1' hasta encontrar un caracter no perteneciente a 'set'
->>>>>>> 68602ceb188baaabc9699d7a9c1c6a66652d8b4b
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*trim;
@@ -27,23 +19,21 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	end;
 	size_t	s1_len;
 	size_t	trim_len;
-<<<<<<< HEAD
 
-	s1_len = strlen(s1);
-	start = 0;
-	end = s1_len - 1;
 	if (s1 == NULL || set == NULL)
 		return (NULL);
-	while (start < s1_len && ft_strchr(set, s1[start]) != NULL)
+	s1_len = ft_strlen(s1);
+	start = 0;
+	end = s1_len;
+	while ((s1[start]) && ft_strchr(set, s1[start]))
 		start++;
-	while (end > start && ft_strchr(set, s1[end]) != NULL)
+	while (end > start && ft_strchr(set, s1[end - 1]))
 		end--;
-	trim_len = end - start +1;
+	trim_len = end - start;
 	trim = (char *)malloc((trim_len + 1) * sizeof(char));
 	if (trim == NULL)
 		return (NULL);
-	ft_memcpy(trim, s1 + start, trim_len);
-	trim[trim_len] = '\0';
+	ft_strlcpy(trim, s1 + start, trim_len +1);
 	return (trim);
 }
 
