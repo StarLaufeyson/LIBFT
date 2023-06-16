@@ -6,7 +6,7 @@
 /*   By: eluno-la <eluno-la@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 18:48:49 by eluno-la          #+#    #+#             */
-/*   Updated: 2023/06/01 18:59:56 by eluno-la         ###   ########.fr       */
+/*   Updated: 2023/06/16 18:18:07 by eluno-la         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,9 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
-	if (s != NULL)
-		write(fd, s, ft_strlen(s));
+	if (!s || !fd)
+		return ;
+	write(fd, s, ft_strlen(s));
 }
 
 int	main(void)
